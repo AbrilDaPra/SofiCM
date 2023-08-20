@@ -784,6 +784,37 @@ section{
     color: white;
 }
 
+.portfolio-img{
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+}
+.overlay p, .overlay i{
+    margin: 10px;
+    color: white;
+}
+
+.overlay i:hover{
+    color: #E487C0;
+}
+
+.portfolio-img:hover .overlay{
+    opacity: 1;
+}
+
 /* PORTFOLIO DETAILS */
 .portfolio-details{
     padding-top: 40px;
