@@ -5,8 +5,8 @@ body{
 }
   
 a{
-    color: #111;
-    text-decoration: none;
+    color: #111 !important;
+    text-decoration: none !important;
 }
 a:hover{
     color: #E487C0;
@@ -57,9 +57,6 @@ h6{
     height: 80px;
     background: rgba(206, 158, 151, 0.8) !important;
 }
-#header.header-transparent{
-    background: transparent;
-}
 #header.header-scrolled{
     height: 60px;
     background: rgba(206, 158, 151, 0.8);
@@ -79,13 +76,14 @@ h6{
 }
 .navbar li{
     position: relative;
+    padding: 10px;
 }
 .navbar a, .navbar a:focus{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 15px;
-    color: #fff;
+    color: #fff !important;
     white-space: nowrap;
     transition: 0.3s;
     font-size: 12px;
@@ -102,6 +100,11 @@ h6{
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover>a{
     color: #fff;
 }
+
+.fa-bars{
+    font-size: 30px;
+    color: white;
+}
   
 @media (max-width: 1366px){
     .navbar .dropdown .dropdown ul {
@@ -113,24 +116,6 @@ h6{
 }
 
 /* MOBILE */
-.mobile-nav-toggle{
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-    line-height: 0;
-    transition: 0.5s;
-}
-  
-@media (max-width: 991px){
-    .mobile-nav-toggle {
-      display: block;
-    }
-    .navbar ul {
-      display: none;
-    }
-}
-  
 .navbar-mobile{
     position: fixed;
     overflow: hidden;
@@ -361,6 +346,7 @@ section{
   
 .breadcrumbs ol li+li{
     padding-left: 10px;
+    color: #E487C0;
 }
   
 .breadcrumbs ol li+li::before{
@@ -382,6 +368,10 @@ section{
     .breadcrumbs ol li {
       display: inline-block;
     }
+}
+
+.portfolio-selected{
+    font-weight: 500;
 }
 
 /* ABOUT ME */
@@ -1030,7 +1020,7 @@ section{
   padding: 20px 0 30px 0;
 }
 
-.contact .info-box i.bx {
+.contact .info-box .fa-share-nodes, .info-box .fa-envelope, .info-box .fa-phone {
   font-size: 24px;
   color: #e487c0;
   border-radius: 50%;
@@ -1058,8 +1048,8 @@ section{
   justify-content: center;
 }
 
-.contact .social-links a {
-  font-size: 18px;
+.contact .social-links i {
+  font-size: 20px;
   display: inline-block;
   color: #e487c0;
   line-height: 1;
@@ -1135,7 +1125,7 @@ section{
   font-size: 18px;
   display: inline-block;
   background: #E487C0;
-  color: #fff;
+  color: #fff !important;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -1161,5 +1151,5 @@ section{
 }
 
 .credits a{
-  color: white;
+  color: #e487c0 !important;
 }
