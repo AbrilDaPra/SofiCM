@@ -1,44 +1,49 @@
-// let countElement = document.getElementById("counter");
-// let happyClients = 5;
-// let isVisible = false;
-// let counterStarted = false;
+let happyClients = 5;
+let projects = 8;
+let yearsOfExperience = 1;
 
-// function updateCounter(counter){
-//     countElement.textContent = counter;
-// }
+let counters = [
+    { element: document.getElementById("clients-counter"), count: happyClients },
+    { element: document.getElementById("projects-counter"), count: projects },
+    { element: document.getElementById("years-counter"), count: yearsOfExperience }
+];
 
-// function startCounter(){
-//     if (!counterStarted){
-//         counterStarted = true;
-//         let currentCount = 0;
-//         let interval = setInterval(() => {
-//             updateCounter(currentCount);
-//             currentCount++;
-//             if(currentCount > happyClients){
-//                 clearInterval(interval);
-//             }
-//         }, 300);
-//     }
-// }
+function updateCounter(counterElement, counter) {
+    counterElement.textContent = counter.toString();
+}
 
-// function checkVisibility (){
-//     let rect = countElement.getBoundingClientRect();
-//     if (rect.top >= 0 && rect.bottom <= window.innerHeight){
-//         isVisible = true;
-//     } else {
-//         isVisible = false;
-//         counterStarted = false;
-//     }
-// }
+function startCounter(counterElement, count) {
+    if (!counterElement.dataset.intervalStarted) {
+        counterElement.dataset.intervalStarted = true;
+        let currentCount = 0;
+        let interval = setInterval(() => {
+            updateCounter(counterElement, currentCount);
+            currentCount++;
+            if (currentCount > count) {
+                clearInterval(interval);
+                counterElement.dataset.intervalStarted = false;
+            }
+        }, 300);
+    }
+}
 
-// window.addEventListener("scroll", () => {
-//     checkVisibility();
-//     if (isVisible){
-//         startCounter();
-//     }
-// });
 
-// checkVisibility();
+function checkVisibility(rect) {
+    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+}
+
+window.addEventListener("scroll", () => {
+    counters.forEach(counterInfo => {
+        let rect = counterInfo.element.getBoundingClientRect();
+        if (checkVisibility(rect)) {
+            startCounter(counterInfo.element, counterInfo.count);
+        }
+    });
+});
+
+counters.forEach(counterInfo => {
+    checkVisibility(counterInfo.element.getBoundingClientRect());
+});
 
 (() => {
     "use strict";
@@ -60,50 +65,8 @@
   
 
 
-function animateCounter(elementId, finalValue) {
-    let countElement = document.getElementById(elementId);
-    let isVisible = false;
-    let counterStarted = false;
 
-    function updateCounter(counter) {
-        countElement.textContent = counter;
-    }
 
-    function startCounter() {
-        if (!counterStarted) {
-            counterStarted = true;
-            let currentCount = 0;
-            let interval = setInterval(() => {
-                updateCounter(currentCount);
-                currentCount++;
-                if (currentCount > finalValue) {
-                    clearInterval(interval);
-                }
-            }, 300);
-        }
-    }
 
-    function checkVisibility() {
-        let rect = countElement.getBoundingClientRect();
-        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-            isVisible = true;
-        } else {
-            isVisible = false;
-            counterStarted = false;
-        }
-    }
 
-    window.addEventListener("scroll", () => {
-        checkVisibility();
-        if (isVisible) {
-            startCounter();
-        }
-    });
 
-    checkVisibility();
-}
-
-// Llamar a la función para diferentes contadores
-animateCounter("happy-clients-counter", 5);
-animateCounter("projects-counter", 10);
-animateCounter("experience-counter", 15);
