@@ -1,0 +1,23 @@
+/* GENERAL */
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: #111;
+}
+  
+a{
+    color: #111;
+    text-decoration: none;
+}
+a:hover{
+    color: #E487C0;
+    text-decoration: none;
+}
+  
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Livvic', sans-serif;
+}
