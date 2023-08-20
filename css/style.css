@@ -432,15 +432,14 @@ section{
     font-size: 36px;
     color: #E487C0;
     float: left;
-    line-height: 0;
 }
   
 .about .content .count-box span{
     font-size: 36px;
     line-height: 30px;
     display: block;
-    font-weight: 700;
-    color: #3b434a;
+    font-weight: 400;
+    color: #20b38e;
     margin-left: 50px;
 }
   
