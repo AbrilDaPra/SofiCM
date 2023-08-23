@@ -62,11 +62,9 @@ counters.forEach(counterInfo => {
     }
 })();
 
-  
-
-
-
-
+document.getElementById("mobile-menu-icon").addEventListener("click", function () {
+    document.querySelector(".navbar-mobile ul").classList.toggle("active");
+});
 
 
 

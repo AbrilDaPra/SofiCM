@@ -100,10 +100,8 @@ h6{
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover>a{
     color: #fff;
 }
-
-.fa-bars{
-    font-size: 30px;
-    color: white;
+.navbar .container-fluid{
+    justify-content: center !important;
 }
   
 @media (max-width: 1366px){
@@ -115,18 +113,14 @@ h6{
     }
 }
 
-/* MOBILE */
-.navbar-mobile{
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(206, 158, 151, 0.8);
-    transition: 0.3s;
-    z-index: 999;
+@media (max-width: 768px) {
+    #header{
+        height: auto;
+        background-color: #ce9e97 !important;
+    }
 }
+
+/* MOBILE */
 .navbar-mobile .mobile-nav-toggle{
     position: absolute;
     top: 15px;
