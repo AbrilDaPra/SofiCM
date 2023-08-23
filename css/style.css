@@ -1054,12 +1054,6 @@ section{
   border: 1px solid #dde1e4;
 }
 
-.contact .social-links a:hover {
-  color: #fff;
-  border-color: #E487C0 ;
-  background: #E487C0 ;
-}
-
 @keyframes animate-loading {
   0% {
     transform: rotate(0deg);
