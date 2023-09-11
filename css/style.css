@@ -27,8 +27,8 @@ h6{
     position: fixed;
     visibility: hidden;
     opacity: 0;
-    right: 15px;
-    bottom: 15px;
+    right: 30px;
+    bottom: 100px;
     z-index: 996;
     background: #c0d4d0;
     width: 40px;
